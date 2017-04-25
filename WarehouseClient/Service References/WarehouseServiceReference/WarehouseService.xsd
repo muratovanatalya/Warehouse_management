@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfhangar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="hangar" nillable="true" type="tns:hangar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfhangar" nillable="true" type="tns:ArrayOfhangar" />
+  <xs:complexType name="hangar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Area_IdArea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FreePlaces" type="xs:int" />
+      <xs:element minOccurs="0" name="IdHangar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxContainers" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="hangar" nillable="true" type="tns:hangar" />
+</xs:schema>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище WarehouseModelContainer" CdmEntityContainer="WarehouseEntities">
+    <EntitySetMapping Name="areas">
+      <EntityTypeMapping TypeName="WarehouseModel.area">
+        <MappingFragment StoreEntitySet="area">
+          <ScalarProperty Name="IdArea" ColumnName="IdArea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hangars">
+      <EntityTypeMapping TypeName="WarehouseModel.hangar">
+        <MappingFragment StoreEntitySet="hangar">
+          <ScalarProperty Name="IdHangar" ColumnName="IdHangar" />
+          <ScalarProperty Name="MaxContainers" ColumnName="MaxContainers" />
+          <ScalarProperty Name="FreePlaces" ColumnName="FreePlaces" />
+          <ScalarProperty Name="Area_IdArea" ColumnName="Area_IdArea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
