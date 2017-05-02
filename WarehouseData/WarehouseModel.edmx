@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище WarehouseModel" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hangar">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="MaxContainers" Type="int" Nullable="false" />
+          <Property Name="PlacedContainers" Type="int" Nullable="false" />
+          <Property Name="AreaId" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_Hangar_Area">
+          <End Role="Area" Type="Self.Area" Multiplicity="1" />
+          <End Role="Hangar" Type="Self.Hangar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Hangar">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище WarehouseModelContainer">
+          <EntitySet Name="Area" EntityType="Self.Area" Schema="warehouse" store:Type="Tables" />
+          <EntitySet Name="Hangar" EntityType="Self.Hangar" Schema="warehouse" store:Type="Tables" />
+          <AssociationSet Name="fk_Hangar_Area" Association="Self.fk_Hangar_Area">
+            <End Role="Area" EntitySet="Area" />
+            <End Role="Hangar" EntitySet="Hangar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WarehouseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Hangars" Relationship="Self.fk_Hangar_Area" FromRole="Area" ToRole="Hangar" />
+        </EntityType>
+        <EntityType Name="Hangar">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaxContainers" Type="Int32" Nullable="false" />
+          <Property Name="PlacedContainers" Type="Int32" Nullable="false" />
+          <Property Name="AreaId" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Area" Relationship="Self.fk_Hangar_Area" FromRole="Hangar" ToRole="Area" />
+        </EntityType>
+        <Association Name="fk_Hangar_Area">
+          <End Role="Area" Type="Self.Area" Multiplicity="1" />
+          <End Role="Hangar" Type="Self.Hangar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Hangar">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WarehouseContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Areas" EntityType="Self.Area" />
+          <EntitySet Name="Hangars" EntityType="Self.Hangar" />
+          <AssociationSet Name="fk_Hangar_Area" Association="Self.fk_Hangar_Area">
+            <End Role="Area" EntitySet="Areas" />
+            <End Role="Hangar" EntitySet="Hangars" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище WarehouseModelContainer" CdmEntityContainer="WarehouseContext">
+          <EntitySetMapping Name="Areas">
+            <EntityTypeMapping TypeName="WarehouseModel.Area">
+              <MappingFragment StoreEntitySet="Area">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hangars">
+            <EntityTypeMapping TypeName="WarehouseModel.Hangar">
+              <MappingFragment StoreEntitySet="Hangar">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MaxContainers" ColumnName="MaxContainers" />
+                <ScalarProperty Name="PlacedContainers" ColumnName="PlacedContainers" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

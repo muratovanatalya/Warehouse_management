@@ -18,3 +18,15 @@ C:\Users\Natalya\Desktop\Warehouse_management\WarehouseClient\bin\Debug\MySql.We
 C:\Users\Natalya\Desktop\Warehouse_management\WarehouseClient\bin\Debug\MySql.Data.xml
 C:\Users\Natalya\Desktop\Warehouse_management\WarehouseClient\bin\Debug\MySql.Data.Entity.EF6.xml
 C:\Users\Natalya\Desktop\Warehouse_management\WarehouseClient\bin\Debug\MySql.Web.xml
+C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseClient\bin\Debug\WarehouseClient.exe.config
+C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseClient\obj\Debug\WarehouseClient.exe
+C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseClient\obj\Debug\WarehouseClient.pdb
+C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseClient\bin\Debug\WarehouseClient.exe
+C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseClient\bin\Debug\WarehouseClient.pdb
+C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseClient\bin\Debug\EntityFramework.dll
+C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseClient\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseClient\bin\Debug\EntityFramework.xml
+C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseClient\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseClient\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseClient\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseClient\obj\Debug\WarehouseClient.csprojResolveAssemblyReference.cache

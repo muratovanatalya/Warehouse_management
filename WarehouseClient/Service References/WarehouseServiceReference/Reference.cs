@@ -9,29 +9,214 @@
 //------------------------------------------------------------------------------
 
 namespace WarehouseClient.WarehouseServiceReference {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Hangar", Namespace="http://schemas.datacontract.org/2004/07/WarehouseData")]
+    [System.SerializableAttribute()]
+    public partial class Hangar : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WarehouseClient.WarehouseServiceReference.Area AreaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AreaIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MaxContainersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PlacedContainersField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WarehouseClient.WarehouseServiceReference.Area Area {
+            get {
+                return this.AreaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AreaField, value) != true)) {
+                    this.AreaField = value;
+                    this.RaisePropertyChanged("Area");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AreaId {
+            get {
+                return this.AreaIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AreaIdField, value) != true)) {
+                    this.AreaIdField = value;
+                    this.RaisePropertyChanged("AreaId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdField, value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int MaxContainers {
+            get {
+                return this.MaxContainersField;
+            }
+            set {
+                if ((this.MaxContainersField.Equals(value) != true)) {
+                    this.MaxContainersField = value;
+                    this.RaisePropertyChanged("MaxContainers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PlacedContainers {
+            get {
+                return this.PlacedContainersField;
+            }
+            set {
+                if ((this.PlacedContainersField.Equals(value) != true)) {
+                    this.PlacedContainersField = value;
+                    this.RaisePropertyChanged("PlacedContainers");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Area", Namespace="http://schemas.datacontract.org/2004/07/WarehouseData")]
+    [System.SerializableAttribute()]
+    public partial class Area : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WarehouseClient.WarehouseServiceReference.Hangar[] HangarsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WarehouseClient.WarehouseServiceReference.Hangar[] Hangars {
+            get {
+                return this.HangarsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HangarsField, value) != true)) {
+                    this.HangarsField = value;
+                    this.RaisePropertyChanged("Hangars");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdField, value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WarehouseServiceReference.IWarehouseService")]
     public interface IWarehouseService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetHangars", ReplyAction="http://tempuri.org/IWarehouseService/GetHangarsResponse")]
-        WcfService.hangar[] GetHangars();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetHangarById", ReplyAction="http://tempuri.org/IWarehouseService/GetHangarByIdResponse")]
+        WarehouseClient.WarehouseServiceReference.Hangar GetHangarById(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetHangarById", ReplyAction="http://tempuri.org/IWarehouseService/GetHangarByIdResponse")]
+        System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Hangar> GetHangarByIdAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetHangarsByArea", ReplyAction="http://tempuri.org/IWarehouseService/GetHangarsByAreaResponse")]
+        WarehouseClient.WarehouseServiceReference.Hangar[] GetHangarsByArea(string areaId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetHangarsByArea", ReplyAction="http://tempuri.org/IWarehouseService/GetHangarsByAreaResponse")]
+        System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Hangar[]> GetHangarsByAreaAsync(string areaId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetHangars", ReplyAction="http://tempuri.org/IWarehouseService/GetHangarsResponse")]
-        System.Threading.Tasks.Task<WcfService.hangar[]> GetHangarsAsync();
+        WarehouseClient.WarehouseServiceReference.Hangar[] GetHangars();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetHangars", ReplyAction="http://tempuri.org/IWarehouseService/GetHangarsResponse")]
+        System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Hangar[]> GetHangarsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/UpdateHangar", ReplyAction="http://tempuri.org/IWarehouseService/UpdateHangarResponse")]
-        void UpdateHangar(WcfService.hangar h);
+        [System.ServiceModel.TransactionFlowAttribute(System.ServiceModel.TransactionFlowOption.Allowed)]
+        bool UpdateHangar(WarehouseClient.WarehouseServiceReference.Hangar hangar);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/UpdateHangar", ReplyAction="http://tempuri.org/IWarehouseService/UpdateHangarResponse")]
-        System.Threading.Tasks.Task UpdateHangarAsync(WcfService.hangar h);
+        System.Threading.Tasks.Task<bool> UpdateHangarAsync(WarehouseClient.WarehouseServiceReference.Hangar hangar);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/Add", ReplyAction="http://tempuri.org/IWarehouseService/AddResponse")]
-        int Add(int n1, int n2);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetAreas", ReplyAction="http://tempuri.org/IWarehouseService/GetAreasResponse")]
+        WarehouseClient.WarehouseServiceReference.Area[] GetAreas();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/Add", ReplyAction="http://tempuri.org/IWarehouseService/AddResponse")]
-        System.Threading.Tasks.Task<int> AddAsync(int n1, int n2);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetAreas", ReplyAction="http://tempuri.org/IWarehouseService/GetAreasResponse")]
+        System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Area[]> GetAreasAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -61,28 +246,44 @@ namespace WarehouseClient.WarehouseServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public WcfService.hangar[] GetHangars() {
+        public WarehouseClient.WarehouseServiceReference.Hangar GetHangarById(string id) {
+            return base.Channel.GetHangarById(id);
+        }
+        
+        public System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Hangar> GetHangarByIdAsync(string id) {
+            return base.Channel.GetHangarByIdAsync(id);
+        }
+        
+        public WarehouseClient.WarehouseServiceReference.Hangar[] GetHangarsByArea(string areaId) {
+            return base.Channel.GetHangarsByArea(areaId);
+        }
+        
+        public System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Hangar[]> GetHangarsByAreaAsync(string areaId) {
+            return base.Channel.GetHangarsByAreaAsync(areaId);
+        }
+        
+        public WarehouseClient.WarehouseServiceReference.Hangar[] GetHangars() {
             return base.Channel.GetHangars();
         }
         
-        public System.Threading.Tasks.Task<WcfService.hangar[]> GetHangarsAsync() {
+        public System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Hangar[]> GetHangarsAsync() {
             return base.Channel.GetHangarsAsync();
         }
         
-        public void UpdateHangar(WcfService.hangar h) {
-            base.Channel.UpdateHangar(h);
+        public bool UpdateHangar(WarehouseClient.WarehouseServiceReference.Hangar hangar) {
+            return base.Channel.UpdateHangar(hangar);
         }
         
-        public System.Threading.Tasks.Task UpdateHangarAsync(WcfService.hangar h) {
-            return base.Channel.UpdateHangarAsync(h);
+        public System.Threading.Tasks.Task<bool> UpdateHangarAsync(WarehouseClient.WarehouseServiceReference.Hangar hangar) {
+            return base.Channel.UpdateHangarAsync(hangar);
         }
         
-        public int Add(int n1, int n2) {
-            return base.Channel.Add(n1, n2);
+        public WarehouseClient.WarehouseServiceReference.Area[] GetAreas() {
+            return base.Channel.GetAreas();
         }
         
-        public System.Threading.Tasks.Task<int> AddAsync(int n1, int n2) {
-            return base.Channel.AddAsync(n1, n2);
+        public System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Area[]> GetAreasAsync() {
+            return base.Channel.GetAreasAsync();
         }
     }
 }

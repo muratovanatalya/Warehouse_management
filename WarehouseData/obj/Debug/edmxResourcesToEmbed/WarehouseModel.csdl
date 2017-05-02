@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WarehouseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Hangars" Relationship="Self.fk_Hangar_Area" FromRole="Area" ToRole="Hangar" />
+  </EntityType>
+  <EntityType Name="Hangar">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="AreaId" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaxContainers" Type="Int32" Nullable="false" />
+    <Property Name="PlacedContainers" Type="Int32" Nullable="false" />
+    <Property Name="AreaId" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Area" Relationship="Self.fk_Hangar_Area" FromRole="Hangar" ToRole="Area" />
+  </EntityType>
+  <Association Name="fk_Hangar_Area">
+    <End Role="Area" Type="Self.Area" Multiplicity="1" />
+    <End Role="Hangar" Type="Self.Hangar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Hangar">
+        <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WarehouseContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Areas" EntityType="Self.Area" />
+    <EntitySet Name="Hangars" EntityType="Self.Hangar" />
+    <AssociationSet Name="fk_Hangar_Area" Association="Self.fk_Hangar_Area">
+      <End Role="Area" EntitySet="Areas" />
+      <End Role="Hangar" EntitySet="Hangars" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
