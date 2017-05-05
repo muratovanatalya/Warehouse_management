@@ -1,70 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:58045/WarehouseService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WarehouseData" />
-  <xs:element name="GetHangarById">
+  <xs:element name="GetAllHangars">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllHangarsResponse">
     <xs:complexType>
       <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WarehouseData" minOccurs="0" name="GetAllHangarsResult" nillable="true" type="q1:ArrayOfHangar" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Free">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="num" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetHangarByIdResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WarehouseData" minOccurs="0" name="GetHangarByIdResult" nillable="true" type="q1:Hangar" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetHangarsByArea">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="areaId" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetHangarsByAreaResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WarehouseData" minOccurs="0" name="GetHangarsByAreaResult" nillable="true" type="q2:ArrayOfHangar" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetHangars">
+  <xs:element name="FreeResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetHangarsResponse">
+  <xs:element name="Store">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WarehouseData" minOccurs="0" name="GetHangarsResult" nillable="true" type="q3:ArrayOfHangar" />
+        <xs:element minOccurs="0" name="num" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UpdateHangar">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WarehouseData" minOccurs="0" name="hangar" nillable="true" type="q4:Hangar" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="UpdateHangarResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="UpdateHangarResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAreas">
+  <xs:element name="StoreResponse">
     <xs:complexType>
       <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAreasResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WarehouseData" minOccurs="0" name="GetAreasResult" nillable="true" type="q5:ArrayOfArea" />
-      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

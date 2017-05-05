@@ -11,19 +11,14 @@ namespace WarehouseData
     public interface IWarehouseService
     {
         [OperationContract]
-        Hangar GetHangarById(string id);
+        List<Hangar> GetAllHangars();
 
         [OperationContract]
-        List<Hangar> GetHangarsByArea(string areaId);
+        void Free(string num, string id);
 
         [OperationContract]
-        List<Hangar> GetHangars();
+        void Store(string num);
 
-        [OperationContract]
-        [TransactionFlow(TransactionFlowOption.Allowed)]
-        bool UpdateHangar(Hangar hangar);
-
-        [OperationContract]
-        List<Area> GetAreas();
+        Hangar HangarWithMinFreePlaces(List<Hangar> hangars);
     }
 }

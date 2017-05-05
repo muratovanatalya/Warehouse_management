@@ -66,9 +66,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Service References\WarehouseServiceReference\WarehouseClient.WarehouseServiceReference.Area.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\WarehouseServiceReference\WarehouseClient.WarehouseServiceReference.Hangar.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

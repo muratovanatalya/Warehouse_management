@@ -187,36 +187,23 @@ namespace WarehouseClient.WarehouseServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WarehouseServiceReference.IWarehouseService")]
     public interface IWarehouseService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetHangarById", ReplyAction="http://tempuri.org/IWarehouseService/GetHangarByIdResponse")]
-        WarehouseClient.WarehouseServiceReference.Hangar GetHangarById(string id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetAllHangars", ReplyAction="http://tempuri.org/IWarehouseService/GetAllHangarsResponse")]
+        WarehouseClient.WarehouseServiceReference.Hangar[] GetAllHangars();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetHangarById", ReplyAction="http://tempuri.org/IWarehouseService/GetHangarByIdResponse")]
-        System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Hangar> GetHangarByIdAsync(string id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetAllHangars", ReplyAction="http://tempuri.org/IWarehouseService/GetAllHangarsResponse")]
+        System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Hangar[]> GetAllHangarsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetHangarsByArea", ReplyAction="http://tempuri.org/IWarehouseService/GetHangarsByAreaResponse")]
-        WarehouseClient.WarehouseServiceReference.Hangar[] GetHangarsByArea(string areaId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/Free", ReplyAction="http://tempuri.org/IWarehouseService/FreeResponse")]
+        void Free(string num, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetHangarsByArea", ReplyAction="http://tempuri.org/IWarehouseService/GetHangarsByAreaResponse")]
-        System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Hangar[]> GetHangarsByAreaAsync(string areaId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/Free", ReplyAction="http://tempuri.org/IWarehouseService/FreeResponse")]
+        System.Threading.Tasks.Task FreeAsync(string num, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetHangars", ReplyAction="http://tempuri.org/IWarehouseService/GetHangarsResponse")]
-        WarehouseClient.WarehouseServiceReference.Hangar[] GetHangars();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/Store", ReplyAction="http://tempuri.org/IWarehouseService/StoreResponse")]
+        void Store(string num);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetHangars", ReplyAction="http://tempuri.org/IWarehouseService/GetHangarsResponse")]
-        System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Hangar[]> GetHangarsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/UpdateHangar", ReplyAction="http://tempuri.org/IWarehouseService/UpdateHangarResponse")]
-        [System.ServiceModel.TransactionFlowAttribute(System.ServiceModel.TransactionFlowOption.Allowed)]
-        bool UpdateHangar(WarehouseClient.WarehouseServiceReference.Hangar hangar);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/UpdateHangar", ReplyAction="http://tempuri.org/IWarehouseService/UpdateHangarResponse")]
-        System.Threading.Tasks.Task<bool> UpdateHangarAsync(WarehouseClient.WarehouseServiceReference.Hangar hangar);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetAreas", ReplyAction="http://tempuri.org/IWarehouseService/GetAreasResponse")]
-        WarehouseClient.WarehouseServiceReference.Area[] GetAreas();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/GetAreas", ReplyAction="http://tempuri.org/IWarehouseService/GetAreasResponse")]
-        System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Area[]> GetAreasAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWarehouseService/Store", ReplyAction="http://tempuri.org/IWarehouseService/StoreResponse")]
+        System.Threading.Tasks.Task StoreAsync(string num);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -246,44 +233,28 @@ namespace WarehouseClient.WarehouseServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public WarehouseClient.WarehouseServiceReference.Hangar GetHangarById(string id) {
-            return base.Channel.GetHangarById(id);
+        public WarehouseClient.WarehouseServiceReference.Hangar[] GetAllHangars() {
+            return base.Channel.GetAllHangars();
         }
         
-        public System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Hangar> GetHangarByIdAsync(string id) {
-            return base.Channel.GetHangarByIdAsync(id);
+        public System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Hangar[]> GetAllHangarsAsync() {
+            return base.Channel.GetAllHangarsAsync();
         }
         
-        public WarehouseClient.WarehouseServiceReference.Hangar[] GetHangarsByArea(string areaId) {
-            return base.Channel.GetHangarsByArea(areaId);
+        public void Free(string num, string id) {
+            base.Channel.Free(num, id);
         }
         
-        public System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Hangar[]> GetHangarsByAreaAsync(string areaId) {
-            return base.Channel.GetHangarsByAreaAsync(areaId);
+        public System.Threading.Tasks.Task FreeAsync(string num, string id) {
+            return base.Channel.FreeAsync(num, id);
         }
         
-        public WarehouseClient.WarehouseServiceReference.Hangar[] GetHangars() {
-            return base.Channel.GetHangars();
+        public void Store(string num) {
+            base.Channel.Store(num);
         }
         
-        public System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Hangar[]> GetHangarsAsync() {
-            return base.Channel.GetHangarsAsync();
-        }
-        
-        public bool UpdateHangar(WarehouseClient.WarehouseServiceReference.Hangar hangar) {
-            return base.Channel.UpdateHangar(hangar);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UpdateHangarAsync(WarehouseClient.WarehouseServiceReference.Hangar hangar) {
-            return base.Channel.UpdateHangarAsync(hangar);
-        }
-        
-        public WarehouseClient.WarehouseServiceReference.Area[] GetAreas() {
-            return base.Channel.GetAreas();
-        }
-        
-        public System.Threading.Tasks.Task<WarehouseClient.WarehouseServiceReference.Area[]> GetAreasAsync() {
-            return base.Channel.GetAreasAsync();
+        public System.Threading.Tasks.Task StoreAsync(string num) {
+            return base.Channel.StoreAsync(num);
         }
     }
 }

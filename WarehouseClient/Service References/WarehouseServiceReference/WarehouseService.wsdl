@@ -96,7 +96,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_GetHangarById_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_GetAllHangars_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -123,7 +123,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_GetHangarById_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_GetAllHangars_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -150,7 +150,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_GetHangarsByArea_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_Free_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -177,7 +177,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_GetHangarsByArea_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_Free_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -204,7 +204,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_GetHangars_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_Store_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -231,122 +231,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_GetHangars_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="CoordinationContext" Namespace="http://schemas.xmlsoap.org/ws/2004/10/wscoor" />
-          <sp:Header Name="CoordinationContext" Namespace="http://docs.oasis-open.org/ws-tx/wscoor/2006/06" />
-          <sp:Header Name="OleTxTransaction" Namespace="http://schemas.microsoft.com/ws/2006/02/tx/oletx" />
-          <sp:Header Name="IssuedTokens" Namespace="http://schemas.xmlsoap.org/ws/2005/02/trust" />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="CoordinationContext" Namespace="http://schemas.xmlsoap.org/ws/2004/10/wscoor" />
-          <sp:Header Name="CoordinationContext" Namespace="http://docs.oasis-open.org/ws-tx/wscoor/2006/06" />
-          <sp:Header Name="OleTxTransaction" Namespace="http://schemas.microsoft.com/ws/2006/02/tx/oletx" />
-          <sp:Header Name="IssuedTokens" Namespace="http://schemas.xmlsoap.org/ws/2005/02/trust" />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_UpdateHangar_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_UpdateHangar_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="CoordinationContext" Namespace="http://schemas.xmlsoap.org/ws/2004/10/wscoor" />
-          <sp:Header Name="CoordinationContext" Namespace="http://docs.oasis-open.org/ws-tx/wscoor/2006/06" />
-          <sp:Header Name="OleTxTransaction" Namespace="http://schemas.microsoft.com/ws/2006/02/tx/oletx" />
-          <sp:Header Name="IssuedTokens" Namespace="http://schemas.xmlsoap.org/ws/2005/02/trust" />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="CoordinationContext" Namespace="http://schemas.xmlsoap.org/ws/2004/10/wscoor" />
-          <sp:Header Name="CoordinationContext" Namespace="http://docs.oasis-open.org/ws-tx/wscoor/2006/06" />
-          <sp:Header Name="OleTxTransaction" Namespace="http://schemas.microsoft.com/ws/2006/02/tx/oletx" />
-          <sp:Header Name="IssuedTokens" Namespace="http://schemas.xmlsoap.org/ws/2005/02/trust" />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_UpdateHangar_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="CoordinationContext" Namespace="http://schemas.xmlsoap.org/ws/2004/10/wscoor" />
-          <sp:Header Name="CoordinationContext" Namespace="http://docs.oasis-open.org/ws-tx/wscoor/2006/06" />
-          <sp:Header Name="OleTxTransaction" Namespace="http://schemas.microsoft.com/ws/2006/02/tx/oletx" />
-          <sp:Header Name="IssuedTokens" Namespace="http://schemas.xmlsoap.org/ws/2005/02/trust" />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="CoordinationContext" Namespace="http://schemas.xmlsoap.org/ws/2004/10/wscoor" />
-          <sp:Header Name="CoordinationContext" Namespace="http://docs.oasis-open.org/ws-tx/wscoor/2006/06" />
-          <sp:Header Name="OleTxTransaction" Namespace="http://schemas.microsoft.com/ws/2006/02/tx/oletx" />
-          <sp:Header Name="IssuedTokens" Namespace="http://schemas.xmlsoap.org/ws/2005/02/trust" />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_GetAreas_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="CoordinationContext" Namespace="http://schemas.xmlsoap.org/ws/2004/10/wscoor" />
-          <sp:Header Name="CoordinationContext" Namespace="http://docs.oasis-open.org/ws-tx/wscoor/2006/06" />
-          <sp:Header Name="OleTxTransaction" Namespace="http://schemas.microsoft.com/ws/2006/02/tx/oletx" />
-          <sp:Header Name="IssuedTokens" Namespace="http://schemas.xmlsoap.org/ws/2005/02/trust" />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="CoordinationContext" Namespace="http://schemas.xmlsoap.org/ws/2004/10/wscoor" />
-          <sp:Header Name="CoordinationContext" Namespace="http://docs.oasis-open.org/ws-tx/wscoor/2006/06" />
-          <sp:Header Name="OleTxTransaction" Namespace="http://schemas.microsoft.com/ws/2006/02/tx/oletx" />
-          <sp:Header Name="IssuedTokens" Namespace="http://schemas.xmlsoap.org/ws/2005/02/trust" />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_GetAreas_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IWarehouseService_Store_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -380,114 +265,71 @@
       <xsd:import schemaLocation="http://localhost:58045/WarehouseService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WarehouseData" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IWarehouseService_GetHangarById_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetHangarById" />
+  <wsdl:message name="IWarehouseService_GetAllHangars_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllHangars" />
   </wsdl:message>
-  <wsdl:message name="IWarehouseService_GetHangarById_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetHangarByIdResponse" />
+  <wsdl:message name="IWarehouseService_GetAllHangars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllHangarsResponse" />
   </wsdl:message>
-  <wsdl:message name="IWarehouseService_GetHangarsByArea_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetHangarsByArea" />
+  <wsdl:message name="IWarehouseService_Free_InputMessage">
+    <wsdl:part name="parameters" element="tns:Free" />
   </wsdl:message>
-  <wsdl:message name="IWarehouseService_GetHangarsByArea_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetHangarsByAreaResponse" />
+  <wsdl:message name="IWarehouseService_Free_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FreeResponse" />
   </wsdl:message>
-  <wsdl:message name="IWarehouseService_GetHangars_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetHangars" />
+  <wsdl:message name="IWarehouseService_Store_InputMessage">
+    <wsdl:part name="parameters" element="tns:Store" />
   </wsdl:message>
-  <wsdl:message name="IWarehouseService_GetHangars_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetHangarsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IWarehouseService_UpdateHangar_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateHangar" />
-  </wsdl:message>
-  <wsdl:message name="IWarehouseService_UpdateHangar_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateHangarResponse" />
-  </wsdl:message>
-  <wsdl:message name="IWarehouseService_GetAreas_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAreas" />
-  </wsdl:message>
-  <wsdl:message name="IWarehouseService_GetAreas_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAreasResponse" />
+  <wsdl:message name="IWarehouseService_Store_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreResponse" />
   </wsdl:message>
   <wsdl:portType name="IWarehouseService">
-    <wsdl:operation name="GetHangarById">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWarehouseService/GetHangarById" message="tns:IWarehouseService_GetHangarById_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWarehouseService/GetHangarByIdResponse" message="tns:IWarehouseService_GetHangarById_OutputMessage" />
+    <wsdl:operation name="GetAllHangars">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWarehouseService/GetAllHangars" message="tns:IWarehouseService_GetAllHangars_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWarehouseService/GetAllHangarsResponse" message="tns:IWarehouseService_GetAllHangars_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetHangarsByArea">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWarehouseService/GetHangarsByArea" message="tns:IWarehouseService_GetHangarsByArea_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWarehouseService/GetHangarsByAreaResponse" message="tns:IWarehouseService_GetHangarsByArea_OutputMessage" />
+    <wsdl:operation name="Free">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWarehouseService/Free" message="tns:IWarehouseService_Free_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWarehouseService/FreeResponse" message="tns:IWarehouseService_Free_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetHangars">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWarehouseService/GetHangars" message="tns:IWarehouseService_GetHangars_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWarehouseService/GetHangarsResponse" message="tns:IWarehouseService_GetHangars_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateHangar">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWarehouseService/UpdateHangar" message="tns:IWarehouseService_UpdateHangar_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWarehouseService/UpdateHangarResponse" message="tns:IWarehouseService_UpdateHangar_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAreas">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWarehouseService/GetAreas" message="tns:IWarehouseService_GetAreas_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWarehouseService/GetAreasResponse" message="tns:IWarehouseService_GetAreas_OutputMessage" />
+    <wsdl:operation name="Store">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWarehouseService/Store" message="tns:IWarehouseService_Store_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWarehouseService/StoreResponse" message="tns:IWarehouseService_Store_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IWarehouseService" type="tns:IWarehouseService">
     <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetHangarById">
-      <soap12:operation soapAction="http://tempuri.org/IWarehouseService/GetHangarById" style="document" />
+    <wsdl:operation name="GetAllHangars">
+      <soap12:operation soapAction="http://tempuri.org/IWarehouseService/GetAllHangars" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_GetHangarById_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_GetAllHangars_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_GetHangarById_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_GetAllHangars_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetHangarsByArea">
-      <soap12:operation soapAction="http://tempuri.org/IWarehouseService/GetHangarsByArea" style="document" />
+    <wsdl:operation name="Free">
+      <soap12:operation soapAction="http://tempuri.org/IWarehouseService/Free" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_GetHangarsByArea_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_Free_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_GetHangarsByArea_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_Free_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetHangars">
-      <soap12:operation soapAction="http://tempuri.org/IWarehouseService/GetHangars" style="document" />
+    <wsdl:operation name="Store">
+      <soap12:operation soapAction="http://tempuri.org/IWarehouseService/Store" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_GetHangars_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_Store_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_GetHangars_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateHangar">
-      <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_UpdateHangar_policy" />
-      <soap12:operation soapAction="http://tempuri.org/IWarehouseService/UpdateHangar" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_UpdateHangar_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_UpdateHangar_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAreas">
-      <soap12:operation soapAction="http://tempuri.org/IWarehouseService/GetAreas" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_GetAreas_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_GetAreas_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IWarehouseService_Store_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
