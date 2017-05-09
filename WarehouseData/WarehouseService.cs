@@ -31,8 +31,11 @@ namespace WarehouseData
                 if (n == 0) throw new FaultException("Введите число, отличное от нуля");
 
                 Hangar hangar = db.Hangars.SingleOrDefault(h => h.Id == id);
+
                 if (hangar == null) throw new FaultException(id + ": не найден ангар с данным id");
-                if (hangar.PlacedContainers <= n) throw new FaultException(n + ": нельзя выгрузить из ангара " + id + " число контейнеров, превышающее текущее число контейнеров в ангаре");
+                if (hangar.PlacedContainers == 0) throw new FaultException("Невозможно провести операцию. Ангар " + id + " пуст");
+                if (hangar.PlacedContainers <= n) throw new FaultException("Невозможно провести операцию. Некорректный ввод числа контейнеров. В ангаре " + id + " содержится " + hangar.PlacedContainers  + " контейнер(-a/-ов)");
+
                 hangar.PlacedContainers -= n;
                 db.SaveChanges();
             }

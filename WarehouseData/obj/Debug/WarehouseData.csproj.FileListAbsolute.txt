@@ -15,4 +15,3 @@ C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseData\bin\Debug\r
 C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseData\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
 C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseData\obj\Debug\WarehouseData.dll
 C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseData\obj\Debug\WarehouseData.pdb
-C:\Users\Natalya\Documents\GitHub\Warehouse_management\WarehouseData\obj\Debug\WarehouseData.csprojResolveAssemblyReference.cache

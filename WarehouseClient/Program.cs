@@ -20,19 +20,23 @@ namespace WarehouseClient
             try
             {
                 var hangars = proxi.GetAllHangars();
-                Console.WriteLine("Площадка   Ангар   Количество размещенных контейнеров   Общее количество мест\n");
+                Console.WriteLine("\nПлощадка   Ангар   Количество размещенных контейнеров   Общее количество мест");
                 foreach (var h in hangars)
                 {
                     Console.WriteLine("   {0}\t    {1}\t\t\t{2}\t\t\t\t{3}", h.AreaId, h.Id, h.PlacedContainers, h.MaxContainers);
                 }
             }
-            catch (CommunicationException commException)
+            catch (FaultException exp)
             {
-                Console.WriteLine("CommunicationException: {0}", commException.Message);
+                Console.WriteLine(exp.Message);
             }
-            catch (Exception ex)
+            catch (CommunicationException exp)
             {
-                Console.WriteLine("Не удалось загрузить данные сервера. {0}", ex.Message);
+                Console.WriteLine("Ошибка связи. {0}", exp.Message);
+            }
+            catch (Exception exp)
+            {
+                Console.WriteLine("Не удалось загрузить данные сервера. {0}", exp.Message);
             }
         }
 
@@ -41,19 +45,19 @@ namespace WarehouseClient
             try
             {
                 proxi.Store(tokens.ElementAt(1));
-                Console.WriteLine("{0} контейнеров успешно размещены на складе", tokens.ElementAt(1));
+                Console.WriteLine("{0} контейнер(-а/-ов) успешно размещен(-ы) на складе", tokens.ElementAt(1));
             }
-            catch (FaultException exception)
+            catch (FaultException exp)
             {
-                Console.WriteLine("FaultException: {0}", exception.Message);
+                Console.WriteLine(exp.Message);
             }
-            catch (CommunicationException commException)
+            catch (CommunicationException exp)
             {
-                Console.WriteLine("CommunicationException: {0}", commException.Message);
+                Console.WriteLine("Ошибка связи. {0}", exp.Message);
             }
-            catch (Exception ex)
+            catch (Exception exp)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(exp.Message);
             }
         }
 
@@ -62,19 +66,19 @@ namespace WarehouseClient
             try
             {
                 proxi.Free(tokens.ElementAt(1), tokens.ElementAt(2));
-                Console.WriteLine("{0} контейнеров успешно выгружены из ангара {1}", tokens.ElementAt(1), tokens.ElementAt(2)); 
+                Console.WriteLine("{0} контейнер(-а/-ов) успешно выгружен(-ы) из ангара {1}", tokens.ElementAt(1), tokens.ElementAt(2)); 
             }
-            catch (FaultException exception)
+            catch (FaultException exp)
             {
-                Console.WriteLine("FaultException: {0}", exception.Message);
+                Console.WriteLine(exp.Message);
             }
-            catch (CommunicationException commException)
+            catch (CommunicationException exp)
             {
-                Console.WriteLine("CommunicationException: {0}", commException.Message);
+                Console.WriteLine("Ошибка связи. {0}", exp.Message);
             }
-            catch (Exception ex)
+            catch (Exception exp)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(exp.Message);
             }
         }
 
@@ -108,7 +112,6 @@ namespace WarehouseClient
                                     Console.WriteLine("Данная команда не поддерживает задание аргументов");
                             }
                             break;
-
                         case "SHOWSTATUS":
                             {
                                 if (tokens.Count() == 1)
